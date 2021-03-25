@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { connect } from "react-redux";
-import { increment } from "../Counter/reducer/counterReducer";
+import { decrement, increment } from "../Counter/reducer/counterReducer";
 
-const Counter = ({ count, increment }) => {
+const Counter = ({ count, increment, decrement }) => {
   return (
     <div className="container">
       <div className="row">
@@ -16,7 +16,9 @@ const Counter = ({ count, increment }) => {
               <button onClick={increment} className="btn btn-primary">
                 Increment
               </button>
-              <button className="btn btn-secondary mx-2">Decrement</button>
+              <button onClick={decrement} className="btn btn-secondary mx-2">
+                Decrement
+              </button>
               <button className="btn btn-danger">Reset</button>
             </div>
           </div>
@@ -33,6 +35,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
   return {
     increment: () => dispatch(increment()),
+    decrement: () => dispatch(decrement()),
   };
 };
 
