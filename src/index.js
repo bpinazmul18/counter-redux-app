@@ -9,8 +9,6 @@ import configureStore from "./Counter/store/configureStore";
 
 const store = configureStore();
 
-console.log(store);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

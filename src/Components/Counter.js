@@ -27,7 +27,7 @@ const Counter = ({ count, increment }) => {
 };
 
 function mapStateToProps(state) {
-  return { state };
+  return { count: state.counter.count };
 }
 
 const mapDispatchToProps = (dispatch) => {
